@@ -35,12 +35,20 @@ export default class Boot extends Component {
     )
   }
 
+  hapusin = () => {
+    this.setState({ data: [] })
+    localStorage.removeItem('data')
+  }
+
 
   render() {
     return (
       <div>
         <h1>Data Siswa Sekolah X</h1>
+
         <button onClick={this.bukain}>Tambah</button>
+        <button onClick={this.hapusin}>Hapus</button>
+
         <ul>
           <li><p>Nama = Joni</p></li>
           <p>Kelas = 12</p>
