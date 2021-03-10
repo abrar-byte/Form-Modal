@@ -1,12 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+// import App from './App';
 import reportWebVitals from './reportWebVitals';
+// import Formulir from './Form';
+import Boot from './Boot';
+// import Coba from './Coba';
+import Formulir from './Form';
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Boot />
   </React.StrictMode>,
   document.getElementById('root')
 );
