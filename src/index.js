@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 // import Formulir from './Form';
 import Boot from './Boot';
 // import Coba from './Coba';
-import Formulir from './Form';
+
 
 
 ReactDOM.render(
