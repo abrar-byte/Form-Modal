@@ -36,8 +36,11 @@ export default class Boot extends Component {
   }
 
   hapusin = () => {
-    this.setState({ data: [] })
-    localStorage.removeItem('data')
+    const data = this.state.data
+    data.splice(-1);
+    this.setState({ data })
+    localStorage.setItem('data', JSON.stringify(this.state.data)
+    )
   }
 
 
@@ -47,7 +50,7 @@ export default class Boot extends Component {
         <h1>Data Siswa Sekolah X</h1>
 
         <button onClick={this.bukain}>Tambah</button>
-        <button onClick={this.hapusin}>Hapus</button>
+        {/* <button onClick={this.hapusin}>Hapus</button> */}
 
         <ul>
           <li><p>Nama = Joni</p></li>
@@ -77,10 +80,12 @@ export default class Boot extends Component {
         {this.state.data.map((item, i) => (
           <div>
             <ul>
-              <li><p key={i}>nama: {item.nama}</p></li>
-              <p>umur: {item.umur}</p>
+              <li><p key={i}>Nama: {item.nama}</p></li>
+              <p>Kelas: {item.umur}</p>
 
             </ul>
+            <button onClick={this.hapusin}>Hapus</button>
+
           </div>
 
 
