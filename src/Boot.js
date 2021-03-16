@@ -22,7 +22,9 @@ export default class Boot extends Component {
 
   tambahin = (event) => {
     event.preventDefault()
-    let b = this.state.data;
+    const b = this.state.data;
+    // const i = data.findIndex(this.b);
+
     b.push({
       nama: event.target.nama.value,
       umur: event.target.umur.value
@@ -35,13 +37,35 @@ export default class Boot extends Component {
     )
   }
 
-  hapusin = () => {
+  hapusin = (x) => {
     const data = this.state.data
-    data.splice(-1);
+    // if (data[i] <= 1) {
+    // data.splice(i, 1);
+
+    data.splice(x, 1);
     this.setState({ data })
     localStorage.setItem('data', JSON.stringify(this.state.data)
     )
   }
+
+  // hapusin(e) {
+  //   // const data = this.state.data;
+  //   var array = [this.state.data]; // make a separate copy of the array
+  //   var index = array.indexOf(e.target.value)
+  //   if (index !== -1) {
+  //     array.splice(index, 1);
+  //     this.setState({ data: array });
+  //   }
+  //   localStorage.setItem('data', JSON.stringify(this.state.data)
+  //   )
+
+  // }
+
+  // hapusin = () => {
+  //   this.setState({ b: [] });
+  //   localStorage.removeItem("data", JSON.stringify(this.state.data));
+  // }
+
 
 
   render() {
@@ -78,13 +102,13 @@ export default class Boot extends Component {
         </Modal>
 
         {this.state.data.map((item, i) => (
-          <div>
+          <div key={i}>
             <ul>
-              <li><p key={i}>Nama: {item.nama}</p></li>
+              <li><p>Nama: {item.nama}</p></li>
               <p>Kelas: {item.umur}</p>
 
             </ul>
-            <button onClick={this.hapusin}>Hapus</button>
+            <button onClick={e => this.hapusin(i)}>Hapus</button>
 
           </div>
 
