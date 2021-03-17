@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Form, Button } from "react-bootstrap"
 
-export default class Formulir extends Component {
+export default class Formulir2 extends Component {
   state = {
-    email: localStorage.length === 0 ? "" : JSON.parse(localStorage.getItem('state')).email,
-    password: localStorage.length === 0 ? "" : JSON.parse(localStorage.getItem('state')).password,
-    check: localStorage.length === 0 ? false : JSON.parse(localStorage.getItem('state')).check
+    email: localStorage.length === 0 ? "" : JSON.parse(localStorage.getItem('state')),
+    password: localStorage.length === 0 ? "" : JSON.parse(localStorage.getItem('state')),
+    check: localStorage.length === 0 ? false : JSON.parse(localStorage.getItem('state'))
 
   }
 

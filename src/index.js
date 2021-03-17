@@ -3,15 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 // import App from './App';
 import reportWebVitals from './reportWebVitals';
-// import Formulir from './Form';
-import Boot from './Boot';
+// import Formulir2 from './Form';
+// import Boot from './Boot';
 // import Coba from './Coba';
+import Data from './Data'
 
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <Boot />
+    <Data />
   </React.StrictMode>,
   document.getElementById('root')
 );
