@@ -1,18 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import Rapot from './Rapot';
 // import App from './App';
 import reportWebVitals from './reportWebVitals';
 // import Formulir2 from './Form';
 // import Boot from './Boot';
 // import Coba from './Coba';
-import Data from './Data'
+// import Data from './Data'
 
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <Data />
+    <Rapot />
   </React.StrictMode>,
   document.getElementById('root')
 );
