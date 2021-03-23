@@ -16,14 +16,14 @@ export default class Rapot extends Component {
     this.setState({ buka, index: null })
   }
 
-  tambahin = (event, p) => {
+  tambahin = (event, predikat) => {
     event.preventDefault()
     const { rapot, index } = this.state
-    const { nama, nilai, } = event.target
+    // const { nama, nilai, } = event.target
     const newData = {
-      nama: nama.value,
-      nilai: nilai.value,
-      predikat: p
+      nama: event.target.nama.value,
+      nilai: event.target.nilai.value,
+      predikat
       // keterangan:keterangan.value
     }
     if (index === null) {
@@ -33,7 +33,6 @@ export default class Rapot extends Component {
       rapot[index] = newData
     }
     // if (newData.nilai > 6) {
-
 
     //   p == lulus
     // }
@@ -47,8 +46,7 @@ export default class Rapot extends Component {
 
 
 
-    console.log("value", event.target.nilai.value);
-    console.log("etarget", event.target.nilai)
+    console.log(newData);
     this.setState({ rapot })
     this.pintu(false)
 
@@ -84,7 +82,7 @@ export default class Rapot extends Component {
             <Modal.Title>Masukin Nilainya Pak/Bu Guru</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <Form onSubmit={(event) => this.tambahin(event, event.target.nilai.value > 6 ? "lulus" : "tidak lulus")}>
+            <Form onSubmit={(event) => this.tambahin(event, event.target.nilai > 6 ? "Selamat Kamu Lulus" : "Kamu Tidak Lulus!Silahkan Remidi")}>
               <Form.Label>Nama</Form.Label>
               <Form.Control name="nama" defaultValue={this.state.index !== null ? this.state.rapot[this.state.index].nama : null} type="text" placeholder="Nama Muridmu" />
               <Form.Text className="text-muted">
@@ -108,8 +106,8 @@ export default class Rapot extends Component {
             <p>Nama: {item.nama}</p>
             {/* <p>Kelas: {item.kelas}</p> */}
             <p>Nilai: {item.nilai}</p>
-            {/* <p>{this.tambahin}</p> */}
-            <p>: {item.predikat}</p>
+            <p>Predikat:{item.predikat}</p>
+
 
 
 
