@@ -23,7 +23,7 @@ export default class Rapot extends Component {
     const newData = {
       nama: nama.value,
       nilai: nilai.value,
-      predikat: p
+      predikat: nilai.value > 6 ? "lulus" : "tidak lulus"
       // keterangan:keterangan.value
     }
     if (index === null) {
@@ -84,7 +84,7 @@ export default class Rapot extends Component {
             <Modal.Title>Masukin Nilainya Pak/Bu Guru</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <Form onSubmit={(event) => this.tambahin(event, event.target.nilai.value > 6 ? "lulus" : "tidak lulus")}>
+            <Form onSubmit={(event) => this.tambahin(event)}>
               <Form.Label>Nama</Form.Label>
               <Form.Control name="nama" defaultValue={this.state.index !== null ? this.state.rapot[this.state.index].nama : null} type="text" placeholder="Nama Muridmu" />
               <Form.Text className="text-muted">
@@ -92,7 +92,7 @@ export default class Rapot extends Component {
               </Form.Text>
               <Form.Label>Nilai</Form.Label>
 
-              <Form.Control name="nilai" defaultValue={this.state.index !== null ? this.state.rapot[this.state.index].nilai : null} type="number" placeholder="Masukin Nilai" />
+              <Form.Control name="nilai" defaultValue={this.state.index !== null ? this.state.rapot[this.state.index].nilai : null} type="number" max="10" min="0" placeholder="Masukin Nilai" />
               {/* <Form.Label>Keterangan</Form.Label> */}
 
               {/* <Form.Control name="keterangan" defaultValue={this.state.index !== null ? this.state.rapot[this.state.index].ket : null} type="text" placeholder="Masukin Nilai" /> */}
@@ -109,7 +109,7 @@ export default class Rapot extends Component {
             {/* <p>Kelas: {item.kelas}</p> */}
             <p>Nilai: {item.nilai}</p>
             {/* <p>{this.tambahin}</p> */}
-            <p>: {item.predikat}</p>
+            <p>Predikat: {item.predikat}</p>
 
 
 
